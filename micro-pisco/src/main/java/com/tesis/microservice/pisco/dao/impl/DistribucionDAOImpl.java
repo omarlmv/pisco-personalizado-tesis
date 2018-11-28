@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
@@ -60,6 +61,82 @@ public class DistribucionDAOImpl implements DistribucionDAO {
 		return listaEventos;
 
 	}
+	
+	
+	@Override
+	public Integer buscarEstadoPedido(Pedido pedido) {
+		logger.info("buscarEstadoPedido");
+
+		jdbcCall = new SimpleJdbcCall(jdbcTemplate);
+		jdbcCall.withSchemaName(Constantes.SCHEMA_NAME);
+		jdbcCall.withProcedureName(Constantes.SP_BUSCAR_ESTADO_PEDIDO);
+		jdbcCall.withoutProcedureColumnMetaDataAccess();
+		jdbcCall.declareParameters(
+		new SqlParameter("var_id_pedido", Types.INTEGER),
+		new SqlOutParameter("resultado", Types.INTEGER));
+
+		Map<String, Object> inParamMap = new HashMap<>();
+		inParamMap.put("var_id_pedido", pedido.getIdPedido());
+
+		SqlParameterSource in = new MapSqlParameterSource(inParamMap);
+		Integer resultado = jdbcCall.executeFunction(Integer.class, in);
+		logger.info("result buscarEstadoPedido:" + resultado);
+		return resultado;
+	}
+		
+	
+	@Override
+	public Integer actualizarEstadoPedido(Integer idPedido,Integer estado) {
+		logger.info("actualizarEstadoPedido");
+		
+		SimpleJdbcCall  jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+			.withSchemaName(Constantes.SCHEMA_NAME)
+			.withProcedureName(Constantes.SP_ACTUALIZAR_ESTADO_PEDIDO)
+			.withoutProcedureColumnMetaDataAccess().
+		declareParameters(
+				new SqlParameter("var_id_pedido",Types.INTEGER),
+				new SqlParameter("var_estado",Types.INTEGER),
+				new SqlOutParameter("resultado",Types.INTEGER)
+				);
+		
+		  Map<String, Object> inParamMap = new HashMap<String, Object>();
+		  inParamMap.put("var_id_pedido", idPedido);			
+		  inParamMap.put("var_estado", estado);			
+			    
+		  SqlParameterSource in = new MapSqlParameterSource(inParamMap);
+		  Integer resultado = jdbcCall.executeFunction(Integer.class, in);
+		  logger.info("result actualizarEstadoPedido:" + resultado);
+		  return resultado;
+	}	
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public Integer registrarObservacionPedido(Integer idPedido,String observacion,Integer estado,Integer idUsuario) {
+		logger.info("registrarObservacionPedido");
+		
+		SimpleJdbcCall  jdbcCall = new SimpleJdbcCall(jdbcTemplate)
+			.withSchemaName(Constantes.SCHEMA_NAME)
+			.withProcedureName(Constantes.SP_REGISTRAR_OBSERVACION_PEDIDO)
+			.withoutProcedureColumnMetaDataAccess().
+		declareParameters(
+				new SqlParameter("var_id_pedido",Types.INTEGER),
+				new SqlParameter("var_observacion",Types.VARCHAR),
+				new SqlParameter("var_estado",Types.INTEGER),
+				new SqlParameter("var_id_usuario",Types.INTEGER),
+				new SqlOutParameter("resultado",Types.INTEGER)
+				);
+		
+		  Map<String, Object> inParamMap = new HashMap<String, Object>();
+		  inParamMap.put("var_id_pedido", idPedido);			
+		  inParamMap.put("var_observacion", observacion);
+		  inParamMap.put("var_estado", estado);
+		  inParamMap.put("var_id_usuario", idUsuario);
+			    
+		  SqlParameterSource in = new MapSqlParameterSource(inParamMap);
+		  Integer resultado = jdbcCall.executeFunction(Integer.class, in);
+		  logger.info("result registrarObservacionPedido:" + resultado);
+		  return resultado;
+	}		
 	
 //	@SuppressWarnings("unchecked")
 //	@Override

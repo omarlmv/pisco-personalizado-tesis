@@ -2,21 +2,26 @@ package com.tesis.microservice.pisco.model;
 
 public class Pedido {
 	
-	private int id_pedido;
+	private int idPedido;
 	private String cliente;
 	private String direccion;
-	private String referencia;
-	private String estado;
-	private Integer cantidad;
-	private String tipo;
+	private String distrito;
 	private String descripcion;
+	private Integer estado;
+	private String latitud;
+	private String longitud;	
+	private String tipo;
+	private Integer cantidad;
+	private Integer idUsuario;
+	private String observacion;
 	
-	public int getId_pedido() {
-		return id_pedido;
+	public int getIdPedido() {
+		return idPedido;
 	}
-	public void setId_pedido(int id_pedido) {
-		this.id_pedido = id_pedido;
+	public void setIdPedido(int idPedido) {
+		this.idPedido = idPedido;
 	}
+	
 	public String getCliente() {
 		return cliente;
 	}
@@ -29,16 +34,10 @@ public class Pedido {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public String getReferencia() {
-		return referencia;
-	}
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
-	}
-	public String getEstado() {
+	public Integer getEstado() {
 		return estado;
 	}
-	public void setEstado(String estado) {
+	public void setEstado(Integer estado) {
 		this.estado = estado;
 	}
 	public Integer getCantidad() {
@@ -59,5 +58,34 @@ public class Pedido {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	
+	public String getDistrito() {
+		return distrito;
+	}
+	public void setDistrito(String distrito) {
+		this.distrito = distrito;
+	}
+	public String getLatitud() {
+		return latitud;
+	}
+	public void setLatitud(String latitud) {
+		this.latitud = latitud;
+	}
+	public String getLongitud() {
+		return longitud;
+	}
+	public void setLongitud(String longitud) {
+		this.longitud = longitud;
+	}
+	public Integer getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+	public String getObservacion() {
+		return observacion;
+	}
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
 }

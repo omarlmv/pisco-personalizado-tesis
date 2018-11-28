@@ -30,6 +30,13 @@ public class Constantes {
 	
 	
 	public static final String SP_PEDIDOS_DISTRIBUIDOS = "sp_pedidos_distribucion";
+	public static final String SP_ACTUALIZAR_ESTADO_PEDIDO = "sp_actualizar_estado_pedido";
+	public static final String SP_REGISTRAR_OBSERVACION_PEDIDO = "sp_registrar_observacion_pedido";
 	
+	
+	//WorkFlow
+	public static final String SP_REGISTRAR_WORKFLOW = "sp_registrar_workflow";
+	public static final String SP_BUSCAR_ESTADO_WORKFLOW = "sp_buscar_estado_workflow";
+	public static final String SP_BUSCAR_ESTADO_PEDIDO = "sp_buscar_estado_pedido";
 	
 }

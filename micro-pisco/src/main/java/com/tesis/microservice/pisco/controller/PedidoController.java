@@ -67,6 +67,8 @@ public class PedidoController {
 			boolean nuevoRegistro = false;
 			boolean validaEstado = true;
 			
+			logger.info(pedido.toString());
+			
 			int estadoActual = distribucionService.buscarEstadoPedido(pedido);
 			estadoParametro = UtilEnum.ESTADO_PEDIDO.getEstadoPedidoByID(pedido.getEstado());
 

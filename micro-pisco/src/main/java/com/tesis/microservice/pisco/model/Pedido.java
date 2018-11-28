@@ -88,4 +88,11 @@ public class Pedido {
 	public void setObservacion(String observacion) {
 		this.observacion = observacion;
 	}
+	@Override
+	public String toString() {
+		return "Pedido [idPedido=" + idPedido + ", cliente=" + cliente + ", direccion=" + direccion + ", distrito="
+				+ distrito + ", descripcion=" + descripcion + ", estado=" + estado + ", latitud=" + latitud
+				+ ", longitud=" + longitud + ", tipo=" + tipo + ", cantidad=" + cantidad + ", idUsuario=" + idUsuario
+				+ ", observacion=" + observacion + "]";
+	}
 }

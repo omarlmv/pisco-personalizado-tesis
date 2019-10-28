@@ -38,5 +38,14 @@ public class Constantes {
 	public static final String SP_REGISTRAR_WORKFLOW = "sp_registrar_workflow";
 	public static final String SP_BUSCAR_ESTADO_WORKFLOW = "sp_buscar_estado_workflow";
 	public static final String SP_BUSCAR_ESTADO_PEDIDO = "sp_buscar_estado_pedido";
+
+	//Cliente
+	public static final String SP_CLIENTE_REGISTRAR = "sp_cliente_registrar";
+	public static final String SP_CLIENTE_VALIDA_ACCESO = "sp_cliente_validar_acceso";
+	
+	public static final String SP_PRODUCTOS_LISTAR = "sp_fact_producto_listar_malla_pisco";
+	public static final String SP_PRODUCTO_UPDATE_STOCK = "sp_cliente_validar_acceso";
+	public static final String SP_PRODUCTOS_ACTIVOS_NETSUITE_STOCK_CERO = "sp_cliente_validar_acceso";
+	
 	
 }

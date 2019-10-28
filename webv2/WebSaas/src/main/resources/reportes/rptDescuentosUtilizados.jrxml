@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptCanjesRealizados" language="groovy" pageWidth="820" pageHeight="842" columnWidth="780" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0a8235d5-450f-41b3-be35-bc71550d00c9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="saldo_puntos" class="java.lang.String"/>
+	<parameter name="fecha_impresion" class="java.lang.String"/>
+	<parameter name="cliente" class="java.lang.String"/>
+	<parameter name="canjes_realizado" class="java.lang.String"/>
+	<field name="descuento" class="java.lang.String"/>
+	<field name="numero" class="java.lang.String"/>
+	<field name="usos" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e3e6c79b-9626-4b70-a251-982dbb9ca572" x="0" y="0" width="330" height="19" forecolor="#3EB6BA"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Mi estado de cuenta Programa de Beneficios Interbank]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="d70580e7-d19c-4d10-9a70-4e187da1592b" x="0" y="19" width="555" height="1" backcolor="#E0E1E1"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="144" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8947bfb8-950e-4536-9f8e-0bee8b64b95c" x="23" y="17" width="134" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9e019e4e-e4b0-453b-91a9-c3f8ac83744a" x="23" y="38" width="134" height="20"/>
+				<textElement/>
+				<text><![CDATA[Saldo de Millas Benefit ®]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3de4a5b2-4b7a-4a32-8cbe-a81c92ea1ff3" x="23" y="113" width="442" height="20"/>
+				<textElement/>
+				<text><![CDATA[Detalle de canje descuentos personalizados]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5c7f36c0-a6ca-486e-8cfd-1b3fd7205b87" x="171" y="17" width="148" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[": "+$P{cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d5182ef0-14f7-46d8-86ec-b3f38c163f45" x="171" y="38" width="67" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[": "+$P{saldo_puntos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c6ba0d97-fe56-4174-856b-a3cd048e8e1e" x="622" y="17" width="125" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{fecha_impresion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="23ff88e7-840c-4b6a-8c04-887ead64281d" x="23" y="11" width="64" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descuento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ca64665b-9131-4b2c-af09-d6649ee2e680" x="277" y="11" width="120" height="55"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número de usos del mismo descuento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="802609e6-6d0b-4df3-9990-c32b4639ad08" x="476" y="11" width="131" height="55"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Usos que te quedan disponibles en el período]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b11bcdad-e144-4f45-ac18-dd434e460282" x="647" y="11" width="112" height="32"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de vigencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement uuid="ac235289-e463-4d95-a520-e0a446f7fb53" x="23" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{descuento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f736131b-46e8-4026-8477-2026b8795b6a" x="277" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="260567be-c776-4b81-a261-8830112ad5cd" x="476" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{usos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0c72461c-06b6-43d4-bf11-4b7df2cf1552" x="647" y="13" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

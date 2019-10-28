@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 3.0//EN" "http://tuckey.org/res/dtds/urlrewrite3.0.dtd">
+<urlrewrite>
+<!--     <rule> -->
+<!--         <from>^/$</from> -->
+<!--         <to type="redirect">%{context-path}/home</to> -->
+<!--     </rule> -->
+<!-- 	<rule> -->
+<!-- 		<condition type="method" next="or">PROPFIND</condition> -->
+<!-- 		<condition type="method">PUT</condition> -->
+<!-- 		<from>.*</from> -->
+<!-- 		<to type="redirect">/error</to> -->
+<!-- 	</rule> -->
+	<rule>
+		<condition type="method">TRACE</condition>
+		<from>.*</from>
+		<set type="status">405</set>
+    	<to>null</to>
+    </rule>
+</urlrewrite>

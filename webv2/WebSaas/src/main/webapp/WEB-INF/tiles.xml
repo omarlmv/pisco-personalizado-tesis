@@ -1,0 +1,441 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <definition name="layoutMain" template="/WEB-INF/jsp/layout/layoutMain.jsp">
+    	<put-attribute name="pixelRemarketingGoogle" value="/WEB-INF/jsp/views/marketingSocial/pixel_remark_google.jsp"/>
+    	<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/header.jsp"/>
+		<put-attribute name="menuPrincipal" value="/WEB-INF/jsp/layout/menu.jsp" cascade="true"/>
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/footer.jsp" />
+	</definition>
+	
+	<definition name="login.automatico" extends="layoutMain">
+		<put-attribute name="title" value="Acceso Login" />
+		<put-attribute name="content" value="/WEB-INF/jsp/views/login_automatico.jsp" />
+	</definition>
+
+	<definition name="producto.productoOportunidad" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/producto/oportunidadProducto.jsp" />
+	</definition>
+	<definition name="producto.productoDetalle" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/producto/detalleProducto.jsp" />
+	</definition>
+	
+	<definition name="producto.productoFotos" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/producto/fotosProducto.jsp" />
+	</definition>
+	
+	<definition name="entretenimiento.principal" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/entretenimiento/entretenimientoPrincipal.jsp" />
+	</definition>
+
+	<definition name="WILDCARD:template.*" extends="layoutMain">
+		<put-attribute name="title" expression="${title}" cascade="true"/>
+        <put-attribute name="content" value="/WEB-INF/jsp/views/template/{1}.jsp" />
+    </definition>
+    
+    <definition name="home" extends="layoutMain">
+    	<put-attribute name="title" value="Inicio" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/home.jsp" />
+	</definition>
+	
+ 	<definition name="cliente.micuenta" extends="layoutMain">
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/micuenta/micuenta.jsp" />
+	</definition>
+	
+	<definition name="cliente.miperfil" extends="layoutMain">
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/micuenta/miperfil.jsp" />
+	</definition>
+	
+	<definition name="cliente.micuenta.seguimientoCompras" extends="layoutMain">
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/micuenta/seguimiento_compras.jsp" />
+	</definition>
+	
+	<definition name="cliente.micuenta.imprimir" extends="layoutMain">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value=""/>
+		<put-attribute name="menuPrincipal" value=""/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/micuenta/micuenta_imprimir.jsp" />
+		<put-attribute name="footer" value="" />
+	</definition>
+	
+	<definition name="cliente.miscampanias" extends="layoutMain">
+		<put-attribute name="title" value="Mis Campañas" cascade="true" />
+		<put-attribute name="content" value="/WEB-INF/jsp/views/campanias/txt-Mis-campanas.jsp" />
+	</definition>
+		
+	<definition name="cliente.preguntasFrecuentes" extends="layoutMain">
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/preguntas-frecuentes.jsp" />
+	</definition>
+	
+	<definition name="descuentos.descuento" extends="layoutMain">
+    	<put-attribute name="title" value="Descuentos " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/descuentos/descuento.jsp" />
+	</definition>
+	
+	<definition name="descuentos.descuentoDetalle" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/descuentos/descuentoDetalle.jsp" />
+	</definition>
+	
+	<definition name="descuentos.descuentoOportunidad" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/descuentos/descuentoOportunidad.jsp" />
+	</definition>
+	
+	<definition name="descuentos.descuentoDetalleOportunidad" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/descuentos/descuentoDetalleOportunidad.jsp" />
+	</definition>
+
+	<definition name="destacados.detalleOportunidad" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/destacados/destacadoDetalleOportunidad.jsp" />
+	</definition>
+	
+	<definition name="descuentos.oportunidad" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/descuentos/oportunidad.jsp" />
+	</definition>
+
+	
+	<definition name="costamar.detallepaquete" extends="layoutMain">
+    	<put-attribute name="title" value="Detalle paquete portada " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/detallePaquete.jsp" />
+	</definition>
+	
+	<definition name="costamar.paquete.oportunidad" extends="layoutMain">
+    	<put-attribute name="title" value="Detalle paquete portada " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/oportunidad.jsp" />
+	</definition>
+	
+	<definition name="costamar.paquete.destino" extends="layoutMain">
+    	<put-attribute name="title" value="Detalle paquete portada " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/destino.jsp" />
+	</definition>
+
+	<definition name="costamar.paquete.incluye" extends="layoutMain">
+    	<put-attribute name="title" value="Incluye portada " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/incluye.jsp" />
+	</definition>
+	
+	<definition name="costamar.paquete.cotizar-1" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value="" cascade="true"/>
+    	<put-attribute name="title" value="Cotizar paquete parte 1 " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/cotizar-1.jsp" />
+	</definition>
+	
+	<definition name="costamar.paquete.cotizar-2" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value="" cascade="true"/>
+    	<put-attribute name="title" value="Cotizar paquete parte 2 " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/cotizar-2.jsp" />
+	</definition>
+	
+	<definition name="costamar.paquete.cotizar-3" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value="" cascade="true"/>
+    	<put-attribute name="title" value="Reserva de Paquete" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/paquete/cotizar-3.jsp" />
+	</definition>
+	
+
+	<definition name="vuelos.viaje.constancia" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value="" cascade="true"/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/constancia.jsp" />
+	</definition>
+	<!-- fin vuelos  -->
+	
+	<definition name="vuelos.viaje.error" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value="" cascade="true"/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/1-error-proceso.jsp" />
+	</definition>
+	
+	
+	<definition name="compras.compra" extends="layoutMain">
+    	<put-attribute name="title" value="Compras" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/compras/compras.jsp" />
+	</definition>
+	
+	<definition name="compras.compra.paso2" extends="layoutMain">
+    	<put-attribute name="title" value="Compras" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/compras/compras-paso2.jsp" />
+	</definition>
+	
+	<definition name="productos.destacados" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/home.jsp" />
+	</definition>
+	
+	<definition name="canjeProducto.paso1" extends="layoutMain">
+    	<put-attribute name="title" value="Canje Producto Paso1" cascade="true"/>
+		<put-attribute name="menuPrincipal" value=""/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/canjeProducto/canjeProductoPaso1.jsp" />
+	</definition>
+
+	<definition name="canjeProducto.paso2" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/canjeProducto/canjeProductoPaso2.jsp" />
+	</definition>
+	
+	<definition name="canjeProducto.paso3" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Canje Producto Paso1" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/canjeProducto/canjeProductoPaso3.jsp" />
+	</definition>
+
+ 	<definition name="canjeProducto.paso4" extends="layoutMain">
+ 		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/constancias/comprobante_canje_producto.jsp" />
+		<put-attribute name="pixelConversionGoogle" value="/WEB-INF/jsp/views/marketingSocial/pixel_conversion_google.jsp" cascade="true" />
+		<put-attribute name="pixelFacebookBenefit" value="/WEB-INF/jsp/views/marketingSocial/pixel_facebook_benefit_ok.jsp" cascade="true"/>
+	</definition>
+
+ 	<definition name="canjePaqueteSinRespuestaCostamar.paso4" extends="layoutMain">
+ 		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/constancias/comprobante_canje_paquete_sin_respuesta_costamar.jsp" />
+	</definition>
+	
+	<definition name="canjeProducto.carritoVacio" extends="layoutMain">
+ 		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/canjeProducto/canje_producto_carrito_vacio.jsp" />
+	</definition>
+	
+	<definition name="por.bim" extends="layoutMain">
+    	<put-attribute name="title" value="Por Bim" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/paginas/porbim.jsp" />
+	</definition>
+	
+	<definition name="conocer" extends="layoutMain">
+    	<put-attribute name="title" value="Conocer" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/conocer.jsp" />
+	</definition>
+	
+	<definition name="mapa.sitio" extends="layoutMain">
+    	<put-attribute name="title" value="Mapa de sitio" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/mapa-sitio.jsp" />
+	</definition>
+	
+	<definition name="usuario.seguimiento" extends="layoutMain">
+    	<put-attribute name="title" value="Usuario seguimiento" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/usuario-seguimiento.jsp" />
+	</definition>
+	
+	<definition name="pasarela.ibk_test" template="/WEB-INF/jsp/views/pasarela/pasarela_ibk_test.jsp" />
+	
+	<definition name="pasarela.ibk_reserva_paquete_test" template="/WEB-INF/jsp/views/pasarela/pasarela_ibk_paquete_reserva_test.jsp" />
+	
+	<definition name="pasarela.confirmarTransaccion" extends="layoutMain" >
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Confirmar transaccion" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/pasarela/pasarela_confirmar_tx.jsp" />
+	</definition>
+	
+	
+		<!-- vuelos  -->
+	<definition name="vuelos.portada" extends="layoutMain">
+		<put-attribute name="title" value="Canje Producto Paso2" cascade="true"/>
+	    <put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/portada-viajes.jsp" />
+	</definition>
+	
+	<definition name="vuelos.viaje.p1" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<!-- <put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/P1-Viajes.jsp" />-->
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/viaje1.jsp" />
+	</definition>
+	
+	<definition name="vuelos.viaje.p2" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<!-- <put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/P2-Viajes.jsp" /> -->
+		<!-- <put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/1-P2-Viajes.jsp" />-->
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/viaje2.jsp" />
+		
+	</definition>
+	
+	<definition name="vuelos.viaje.p3" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<!-- <put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/1-P3-Viajes.jsp" />-->
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/viaje3.jsp" />
+	</definition>
+	
+	
+	<!-- fin vuelos  -->
+	
+	<definition name="canje.local.portada" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/canjeLocal/canjeLocal.jsp"/>
+		<put-attribute name="title" value="Canje Local" cascade="true"/>
+	</definition>
+	
+	<definition name="canje.local.detalle" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/canjeLocal/detalleCanjeLocal.jsp"/>
+		<put-attribute name="title" value="Canje Local Detalle" cascade="true"/>
+	</definition>
+	
+	<definition name="viajes.reserva.constancia" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/constancias/comprobante_viajes.jsp" />
+		<put-attribute name="pixelConversionGoogle" value="/WEB-INF/jsp/views/marketingSocial/pixel_conversion_google.jsp"  cascade="true" />
+		<put-attribute name="pixelFacebookBenefit" value="/WEB-INF/jsp/views/marketingSocial/pixel_facebook_benefit_ok.jsp"  cascade="true" />
+	</definition>
+	
+	<definition name="vuelos.viaje.error" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+    	<put-attribute name="title" value="Viajes " cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/vuelo/error-proceso.jsp" />
+	</definition>
+	
+	<definition name="destacados.oportunidad" extends="layoutMain">
+    	<put-attribute name="title" expression="${title}" cascade="true"/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/destacados/oportunidad.jsp" />
+	</definition>
+	
+	<definition name="mapa-de-sitio" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/paginas/mapa_de_sitio.jsp" />
+	</definition>
+	
+	<definition name="preguntas-frecuentes" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/paginas/preguntas_frecuentes.jsp" />
+	</definition>
+	
+	<definition name="terminos-y-condiciones" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/paginas/terminos_y_condiciones.jsp" />
+	</definition>
+	
+	<definition name="conocer-uso-puntos" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/paginas/conocer_uso_puntos.jsp" />
+	</definition>
+	
+	<definition name="que-es-bim" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/paginas/que_es_bim.jsp" />
+	</definition>
+	
+	<definition name="error" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/error.jsp" />
+	</definition>
+	<definition name="error401" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/error401.jsp" />
+	</definition>
+	<definition name="error404" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/error404.jsp" />
+	</definition>
+	
+	<definition name="errorVueloAlterno" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/errorVueloAlterno.jsp" />
+	</definition>
+	
+	<definition name="error_vuelo" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/viajes/error_vuelo.jsp" />
+	</definition>
+	
+	<definition name="benefit-navidad" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/promociones/benefit_navidad.jsp"/>
+		<put-attribute name="title" value="Interbank Benefit" cascade="true" />
+	</definition>
+	
+	<definition name="cyber-wow" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/campanias/cyber_wow.jsp"/>
+		<put-attribute name="title" value="Interbank Benefit" cascade="true" />
+	</definition>
+	
+	<!-- 
+	<definition name="promociones.portada" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/promociones/portada-promociones.jsp"/>
+	</definition>
+	<definition name="promociones.categorias" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/promociones/categorias-promociones.jsp" />
+	</definition>
+	-->
+	
+	
+<!-- 	Nuevo diseño -->
+	
+		
+	<definition name="v2LayoutMain" template="/WEB-INF/v2/layout/layoutMain.jsp">
+		<put-attribute name="pixelRemarketingGoogle" value="/WEB-INF/v2/views/marketingSocial/pixel_remark_google.jsp"/>
+		<put-attribute name="title" value="" />
+		<put-attribute name="header" value="/WEB-INF/v2/layout/header.jsp"/>
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer" value="/WEB-INF/v2/layout/footer.jsp"/>
+	</definition>
+	
+	<definition name="v2.promociones.portada" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/v2/views/promociones/portada-promociones.jsp"/>
+	</definition>
+
+	<definition name="v2.promociones.retos" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/v2/views/promociones/retos.jsp"/>
+	</definition>
+
+	<definition name="v2.promociones.todas" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/v2/views/promociones/todas-promociones.jsp"/>
+	</definition>
+
+	<definition name="v2.promociones.detalle.a" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/v2/views/promociones/promocion-detalle-a.jsp"/>
+	</definition>
+
+	<definition name="v2.promociones.detalle.b" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/v2/views/promociones/promocion-detalle-b.jsp"/>
+	</definition>
+	
+	<definition name="vales.digitales.portada" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/valesDigitales/vales-digitales-portada.jsp"/>
+	</definition>
+	
+	<definition name="vales.digitales.detalle" extends="layoutMain">
+		<put-attribute name="content" value="/WEB-INF/jsp/views/valesDigitales/vales-digitales-detalle.jsp" />
+	</definition>
+
+	<definition name="vales.digitales.paso1" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/valesDigitales/vales-digitales-paso1.jsp" />
+	</definition>
+
+	<definition name="vales.digitales.paso2" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/valesDigitales/vales-digitales-paso2.jsp" />
+	</definition>
+	
+	<definition name="vales.digitales.comprobante" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/valesDigitales/vales-digitales-comprobante.jsp" />
+		<put-attribute name="pixelConversionGoogle" value="/WEB-INF/jsp/views/marketingSocial/pixel_conversion_google.jsp" cascade="true" />
+		<put-attribute name="pixelFacebookBenefit" value="/WEB-INF/jsp/views/marketingSocial/pixel_facebook_benefit_ok.jsp" cascade="true"/>
+		
+	</definition>
+	
+	<definition name="eventos.joinnus.comprobante" extends="layoutMain">
+		<put-attribute name="menuPrincipal" value=""/>
+		<put-attribute name="content" value="/WEB-INF/jsp/views/joinnus/evento-joinnus-comprobante.jsp" />
+		<put-attribute name="pixelConversionGoogle" value="/WEB-INF/jsp/views/marketingSocial/pixel_conversion_google.jsp" cascade="true" />
+		<put-attribute name="pixelFacebookBenefit" value="/WEB-INF/jsp/views/marketingSocial/pixel_facebook_benefit_ok.jsp" cascade="true"/>
+		
+	</definition>	
+	
+	<definition name="nuevo.home" template="/WEB-INF/jsp/views/scorpio/scorpio.jsp">
+		<put-attribute name="pixelRemarketingGoogle" value="/WEB-INF/v2/views/marketingSocial/pixel_remark_google.jsp"/>
+	</definition>
+	<definition name="config.provided" template="/WEB-INF/jsp/views/configProvided.jsp">
+	</definition>
+	
+	
+	
+</tiles-definitions>

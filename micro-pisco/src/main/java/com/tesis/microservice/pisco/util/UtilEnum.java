@@ -115,6 +115,58 @@ public static enum RESULTADO_OPERACION {
 
 }
 
+public  enum TIPO_MILIMETROS_PISCO{
+
+	Ml_125(1, "125ML","125ML"),
+	ML_187(2, "PRODUCCION","PRODUCCION"), 
+	ML_2L(3, "DISTRIBUCION","DISTRIBUCION"),
+	ML_375(4, "DISTRIBUCION","DISTRIBUCION"),
+	ML_4(5, "DISTRIBUCION","DISTRIBUCION"),
+	ML_50(6, "DISTRIBUCION","DISTRIBUCION");
+	
+	private final int codigo;
+	private final String  texto;
+	private final String keyMsg;
+	
+	private TIPO_MILIMETROS_PISCO(int codigo, String texto, String keyMsg){
+		this.codigo = codigo;
+		this.texto = texto;
+		this.keyMsg= keyMsg;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public String getTexto() {
+		return texto;
+	}
+	public String getKeyMsg() {
+		return keyMsg;
+	}
+	
+	public static TIPO_MILIMETROS_PISCO geTipoMIlimetroByID(int id){
+		TIPO_MILIMETROS_PISCO[] valores = TIPO_MILIMETROS_PISCO.values();
+		for(int i=0; i<valores.length; i++){
+			if(valores[i].getCodigo()==id){
+				return  valores[i];
+			}
+		}
+		return null;
+	}
+	
+	public static String geTipoMIlimetroKeyMsg(int estado){
+		String descripcion =  null;
+		for(UtilEnum.TIPO_MILIMETROS_PISCO item : UtilEnum.TIPO_MILIMETROS_PISCO.values() ){
+			if(item.getCodigo()==estado){
+				descripcion = item.getKeyMsg();
+				break;
+			}
+			
+		}
+		return descripcion;
+	}
+}
+
+
 public  enum FASE_WORKFLOW{
 	NEGOCIACION(300, "NEGOCIACION","NEGOCIACION"), 
 	PRODUCCION(301, "PRODUCCION","PRODUCCION"), 
